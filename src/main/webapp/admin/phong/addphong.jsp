@@ -1,11 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>Add Phong</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -34,7 +31,7 @@
             
             <div class="mb-3">
                 <label for="hinhAnh" class="form-label">Hinh Anh:</label>
-                <input type="file" class="form-control" id="hinhAnh" name="hinhAnh">
+                <input type="text" class="form-control" id="hinhAnh" name="hinhAnh">
             </div>
             
             <div class="mb-3">

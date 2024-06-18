@@ -28,7 +28,7 @@ public class PhongDAO {
 				phong.setMaPhong(rs.getString("maPhong"));
 				phong.setMaLoaiPhong(rs.getString("maLoaiPhong"));
 				phong.setTenPhong(rs.getString("tenPhong"));
-				phong.setHinhAnh(rs.getBytes("hinhAnh"));
+				phong.setHinhAnh(rs.getString("hinhAnh"));
 				phong.setSucChua(rs.getInt("sucChua"));
 				phong.setDonGia(rs.getFloat("donGia"));
 				phong.setMoTa(rs.getString("moTa"));
@@ -53,7 +53,7 @@ public class PhongDAO {
 				phong.setMaPhong(rs.getString("maPhong"));
 				phong.setMaLoaiPhong(rs.getString("maLoaiPhong"));
 				phong.setTenPhong(rs.getString("tenPhong"));
-				phong.setHinhAnh(rs.getBytes("hinhAnh"));
+				phong.setHinhAnh(rs.getString("hinhAnh"));
 				phong.setSucChua(rs.getInt("sucChua"));
 				phong.setDonGia(rs.getFloat("donGia"));
 				phong.setMoTa(rs.getString("moTa"));
@@ -72,7 +72,7 @@ public class PhongDAO {
 			preparedStatement.setString(1, phong.getMaPhong());
 			preparedStatement.setString(2, phong.getMaLoaiPhong());
 			preparedStatement.setString(3, phong.getTenPhong());
-			preparedStatement.setBytes(4, phong.getHinhAnh());
+			preparedStatement.setString(4, phong.getHinhAnh());
 			preparedStatement.setInt(5, phong.getSucChua());
 			preparedStatement.setFloat(6, phong.getDonGia());
 			preparedStatement.setString(7, phong.getMoTa());
@@ -92,7 +92,7 @@ public class PhongDAO {
 		try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 			preparedStatement.setString(1, phong.getMaLoaiPhong());
 			preparedStatement.setString(2, phong.getTenPhong());
-			preparedStatement.setBytes(3, phong.getHinhAnh());
+			preparedStatement.setString(3, phong.getHinhAnh());
 			preparedStatement.setInt(4, phong.getSucChua());
 			preparedStatement.setFloat(5, phong.getDonGia());
 			preparedStatement.setString(6, phong.getMoTa());

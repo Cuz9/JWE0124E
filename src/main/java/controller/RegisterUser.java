@@ -31,18 +31,32 @@ public class RegisterUser extends HttpServlet {
 		String taiKhoan = request.getParameter("taiKhoan");
 		String matKhau = request.getParameter("matKhau");
 		String tenKhachHang = request.getParameter("tenKhachHang");
-		Boolean gioiTinh = Boolean.parseBoolean(request.getParameter("gioiTinh"));
+		String gioiTinhStr = request.getParameter("gioiTinh");
+		boolean gioiTinh = "true".equals(gioiTinhStr);
 		String cmnd = request.getParameter("cmnd");
 		String diaChi = request.getParameter("diaChi");
 		String email = request.getParameter("email");
 		String soDienThoai = request.getParameter("soDienThoai");
 
+		if (khachHangService.isMaKhachHangExists(maKhachHang)) {
+			request.setAttribute("error", "Mã khách hàng đã tồn tại. Vui lòng chọn mã khách hàng khác.");
+			request.getRequestDispatcher("user/registeruser.jsp").forward(request, response);
+			return;
+		}
+
+		if (khachHangService.isTaiKhoanExists(taiKhoan)) {
+			request.setAttribute("error", "Tài khoản đã tồn tại. Vui lòng chọn tài khoản khác.");
+			request.getRequestDispatcher("user/registeruser.jsp").forward(request, response);
+			return;
+		}
+
 		KhachHang khachHang = new KhachHang(maKhachHang, taiKhoan, matKhau, tenKhachHang, gioiTinh, cmnd, diaChi, email,
 				soDienThoai);
+
 		if (khachHangService.registerKhachHang(khachHang)) {
-			response.sendRedirect("dangnhap?action=login");
+			response.sendRedirect("dangnhap");
 		} else {
-			request.setAttribute("error", "Đăng ký thất bại");
+			request.setAttribute("error", "Đăng ký thất bại. Vui lòng kiểm tra lại thông tin.");
 			request.getRequestDispatcher("user/registeruser.jsp").forward(request, response);
 		}
 	}

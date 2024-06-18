@@ -44,4 +44,12 @@ public class KhachHangService {
 		return khachHangDAO.getKhachHangById(maKhachHang);
 	}
 
+	public boolean isMaKhachHangExists(String maKhachHang) {
+		return khachHangDAO.isMaKhachHangExists(maKhachHang);
+	}
+
+	public boolean isTaiKhoanExists(String taiKhoan) {
+		return khachHangDAO.isTaiKhoanExists(taiKhoan);
+	}
+
 }

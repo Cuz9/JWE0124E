@@ -4,7 +4,7 @@ public class Phong {
 	private String maPhong;
 	private String maLoaiPhong;
 	private String tenPhong;
-	private byte[] hinhAnh;
+	private String hinhAnh;
 	private int sucChua;
 	private float donGia;
 	private String moTa;
@@ -13,7 +13,7 @@ public class Phong {
 	public Phong() {
 	}
 
-	public Phong(String maPhong, String maLoaiPhong, String tenPhong, byte[] hinhAnh, int sucChua, float donGia,
+	public Phong(String maPhong, String maLoaiPhong, String tenPhong, String hinhAnh, int sucChua, float donGia,
 			String moTa, boolean tinhTrang) {
 		this.maPhong = maPhong;
 		this.maLoaiPhong = maLoaiPhong;
@@ -49,11 +49,11 @@ public class Phong {
 		this.tenPhong = tenPhong;
 	}
 
-	public byte[] getHinhAnh() {
+	public String getHinhAnh() {
 		return hinhAnh;
 	}
 
-	public void setHinhAnh(byte[] hinhAnh) {
+	public void setHinhAnh(String hinhAnh) {
 		this.hinhAnh = hinhAnh;
 	}
 

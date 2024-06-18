@@ -115,4 +115,36 @@ public class KhachHangDAO {
 		return null;
 	}
 
+	public boolean isMaKhachHangExists(String maKhachHang) {
+		String sql = "SELECT COUNT(*) AS count FROM KhachHang WHERE MaKhachHang = ?";
+		try (Connection conn = MyConnection.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, maKhachHang);
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					int count = rs.getInt("count");
+					return count > 0;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean isTaiKhoanExists(String taiKhoan) {
+		String sql = "SELECT COUNT(*) AS count FROM KhachHang WHERE TaiKhoan = ?";
+		try (Connection conn = MyConnection.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, taiKhoan);
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					int count = rs.getInt("count");
+					return count > 0;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 }

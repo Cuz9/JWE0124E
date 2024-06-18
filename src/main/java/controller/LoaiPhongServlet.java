@@ -98,6 +98,7 @@ public class LoaiPhongServlet extends HttpServlet {
 
 	private void addLoaiPhong(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String maLoaiPhong = request.getParameter("maLoaiPhong");
 		String tenLoaiPhong = request.getParameter("tenLoaiPhong");
 		String moTa = request.getParameter("moTa");
@@ -114,6 +115,7 @@ public class LoaiPhongServlet extends HttpServlet {
 
 	private void updateLoaiPhong(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String maLoaiPhong = request.getParameter("maLoaiPhong");
 		String tenLoaiPhong = request.getParameter("tenLoaiPhong");
 		String moTa = request.getParameter("moTa");

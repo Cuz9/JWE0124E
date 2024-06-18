@@ -99,10 +99,11 @@ public class PhongServlet extends HttpServlet {
 
 	private void createPhong(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String maPhong = request.getParameter("maPhong");
 		String maLoaiPhong = request.getParameter("maLoaiPhong");
 		String tenPhong = request.getParameter("tenPhong");
-		byte[] hinhAnh = request.getParameter("hinhAnh").getBytes();
+		String hinhAnh = request.getParameter("hinhAnh");
 		int sucChua = Integer.parseInt(request.getParameter("sucChua"));
 		float donGia = Float.parseFloat(request.getParameter("donGia"));
 		String moTa = request.getParameter("moTa");
@@ -120,10 +121,11 @@ public class PhongServlet extends HttpServlet {
 
 	private void updatePhong(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String maPhong = request.getParameter("maPhong");
 		String maLoaiPhong = request.getParameter("maLoaiPhong");
 		String tenPhong = request.getParameter("tenPhong");
-		byte[] hinhAnh = request.getParameter("hinhAnh").getBytes();
+		String hinhAnh = request.getParameter("hinhAnh");
 		int sucChua = Integer.parseInt(request.getParameter("sucChua"));
 		float donGia = Float.parseFloat(request.getParameter("donGia"));
 		String moTa = request.getParameter("moTa");

@@ -34,7 +34,7 @@ public class LoginUser extends HttpServlet {
 		if (khachHang != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("khachHang", khachHang);
-			response.sendRedirect(request.getContextPath() + "/user/home.jsp");
+			response.sendRedirect(request.getContextPath() + "/home");
 		} else {
 			request.setAttribute("error", "Đăng nhập thất bại");
 			request.getRequestDispatcher("user/loginuser.jsp").forward(request, response);
